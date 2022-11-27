@@ -1,0 +1,313 @@
+<html>
+	<head>
+	</head>
+	<body>
+	
+	<h1>Get Count from Hello World</h1>
+	<div id="output1"><div>
+	<div id="output2"><div>
+
+	<h1>Get Total Issuance from Balances Contract</h1>
+	<div id="balancesResponse1"><div>
+	<div id="balancesResponse2"><div>
+
+
+	<h1>Get Total Issuance from Balances Contract</h1>
+	<div id="balancesPendingTransfer1"><div>
+	<div id="balancesPendingTransfer2"><div>
+
+	<h1>Get Note from Secret Note Contract</h1>
+	<div id="getNoteResponse1"><div>
+	<div id="getNoteResponse2"><div>
+
+		<script>
+
+
+
+
+			function getRandomInt(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+			  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+			}
+
+
+
+		// 	import * from '../frontend-substrate/node_modules/';
+
+			let endpoint = "http://127.0.0.1:8000";
+			let callpoint = "query";
+			
+			let endcallpoint = endpoint + "/" + callpoint;
+			let yourUrl = endcallpoint;
+			
+			let contract_id = "5";
+			let rand_number = getRandomInt(0,999999999); //"766275470"; //$((RANDOM)) // need a random number  callpoint
+			let rand_number2 = getRandomInt(0,999999999); //$((RANDOM)) // need a random number  callpoint
+			
+			let payload="\\\"GetCount\\\"";
+			
+let dataR = 
+"{\"input\": {\"query_payload\": \"{\\\"Plain\\\":\\\"{\\\\\\\"contract_id\\\\\\\":" + contract_id + ",\\\\\\\"nonce\\\\\\\":" + rand_number + ",\\\\\\\"request\\\\\\\":\\\\\\\"GetCounter\\\\\\\"}\\\"}\"}, \"nonce\": {\"id\": " + rand_number2 + "}}";
+			
+			fetch(yourUrl, {
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json',
+			  },
+			  body: dataR,
+			})
+			.then(response => response.text())
+			.then((response) => {
+			    console.log('Success: 1a: ');
+			    console.log(response);
+			    var gg = document.getElementById("output1");
+			    var tt = document.createTextNode(response);
+			    gg.appendChild(tt);
+			})
+			.catch((error) => {
+			  console.error('Error fetch 1:', error);
+			});			
+			
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+			    if (this.readyState != 4) return;
+
+			    if (this.status == 200) {
+			    	console.log("error2");
+			    	console.log(this.responseText);
+				var ff = document.getElementById("output2");
+				var text = document.createTextNode(this.responseText);
+				ff.appendChild(text);
+			    }
+			};			
+			
+			xhr.open("POST", yourUrl, true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(dataR);
+
+
+
+
+
+
+ ///// TotalIssuance Query
+ 
+ 
+ 			// let endcallpoint = endpoint + "/" + callpoint;
+			// let yourUrl = endcallpoint;
+			
+			contract_id = "2";
+			rand_number = "766275470"; //$((RANDOM)) // need a random number  callpoint
+			rand_number2 = "7275470"; //$((RANDOM)) // need a random number  callpoint
+			
+			payload="\\\"TotalIssuance\\\"";
+			
+dataR = 
+"{\"input\": {\"query_payload\": \"{\\\"Plain\\\":\\\"{\\\\\\\"contract_id\\\\\\\":" + contract_id + ",\\\\\\\"nonce\\\\\\\":" + rand_number + ",\\\\\\\"request\\\\\\\":\\\\\\\"TotalIssuance\\\\\\\"}\\\"}\"}, \"nonce\": {\"id\": " + rand_number2 + "}}";
+			
+			fetch(yourUrl, {
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json',
+			  },
+			  body: dataR,
+			})
+			.then(response => response.text())
+			.then((response) => {
+			    console.log('Success: 1a: ');
+			    console.log(response);
+			    var gg = document.getElementById("balancesResponse1");
+			    var tt = document.createTextNode(response);
+			    gg.appendChild(tt);
+			})
+			.catch((error) => {
+			  console.error('Error fetch 1:', error);
+			});			
+			
+			xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+			    if (this.readyState != 4) return;
+
+			    if (this.status == 200) {
+			    	console.log("error2");
+			    	console.log(this.responseText);
+				var ff = document.getElementById("balancesResponse2");
+				var text = document.createTextNode(this.responseText);
+				ff.appendChild(text);
+			    }
+			};			
+			
+			xhr.open("POST", yourUrl, true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(dataR);
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ///// PendingChainTransfer { sequence: SequenceType } Query
+ 
+ 
+ 			// let endcallpoint = endpoint + "/" + callpoint;
+			// let yourUrl = endcallpoint;
+			
+			contract_id = "2";
+			rand_number = "0"; // "766275470"; //$((RANDOM)) // need a random number  callpoint
+			rand_number2 = "7275470"; //$((RANDOM)) // need a random number  callpoint
+			
+			payload="\\\"TotalIssuance\\\"";
+			
+dataR = 
+"{\"input\": {\"query_payload\": \"{\\\"Plain\\\":\\\"{\\\\\\\"contract_id\\\\\\\":" + contract_id + ",\\\\\\\"nonce\\\\\\\":" + rand_number + ",\\\\\\\"request\\\\\\\":{\\\\\\\"PendingChainTransfer\\\\\\\":{\\\\\\\"sequence\\\\\\\":0}}}\\\"}\"}, \"nonce\": {\"value\": " + rand_number2 + "}}";
+		
+	
+// why id OR value on nonce ? why do both work ?	
+			
+			fetch(yourUrl, {
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json',
+			  },
+			  body: dataR,
+			})
+			.then(response => response.text())
+			.then((response) => {
+			    console.log('Success: 1a: ');
+			    console.log(response);
+			    var gg = document.getElementById("balancesPendingTransfer1");
+			    var tt = document.createTextNode(response);
+			    gg.appendChild(tt);
+			})
+			.catch((error) => {
+			  console.error('Error fetch 1:', error);
+			});			
+			
+			xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+			    if (this.readyState != 4) return;
+
+			    if (this.status == 200) {
+			    	console.log("error2");
+			    	console.log(this.responseText);
+				var ff = document.getElementById("balancesPendingTransfer2");
+				var text = document.createTextNode(this.responseText);
+				ff.appendChild(text);
+			    }
+			};			
+			
+			xhr.open("POST", yourUrl, true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(dataR);
+
+ 
+ 
+ 
+ 
+ // secret note
+//  GetNote
+
+ 
+ 
+ 			// let endcallpoint = endpoint + "/" + callpoint;
+			// let yourUrl = endcallpoint;
+			
+			contract_id = "5";
+			rand_number = "766275470"; //$((RANDOM)) // need a random number  callpoint
+			rand_number2 = "7275470"; //$((RANDOM)) // need a random number  callpoint
+			
+			payload="\\\"TotalIssuance\\\"";
+			
+dataR = 
+"{\"input\": {\"query_payload\": \"{\\\"Plain\\\":\\\"{\\\\\\\"contract_id\\\\\\\":" + contract_id + ",\\\\\\\"nonce\\\\\\\":" + rand_number + ",\\\\\\\"request\\\\\\\":\\\\\\\"GetNote\\\\\\\"}\\\"}\"}, \"nonce\": {\"id\": " + rand_number2 + "}}";
+			
+			fetch(yourUrl, {
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json',
+			  },
+			  body: dataR,
+			})
+			.then(response => response.text())
+			.then((response) => {
+			    console.log('Success: 1a: ');
+			    console.log(response);
+			    var gg = document.getElementById("getNoteResponse1");
+			    var tt = document.createTextNode(response);
+			    gg.appendChild(tt);
+			})
+			.catch((error) => {
+			  console.error('Error fetch 1:', error);
+			});			
+			
+			xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+			    if (this.readyState != 4) return;
+
+			    if (this.status == 200) {
+			    	console.log("error2");
+			    	console.log(this.responseText);
+				var ff = document.getElementById("getNoteResponse2");
+				var text = document.createTextNode(this.responseText);
+				ff.appendChild(text);
+			    }
+			};			
+			
+			xhr.open("POST", yourUrl, true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(dataR);
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

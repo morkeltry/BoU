@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  width="612pt" height="792pt" 
+  viewBox="200 345 484 445" version="1.1"
+>
+<g id="surface1">
+<circle cx="342" cy="395" r="140" stroke="black" strokeWidth="2" fill="none" />
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,36%);fill-opacity:1;" 
+  d="M 216 362.8 L 229.4 362.9 L 229.4 392.2 
+  L 230.1 392.2 L 269.6 362.8 L 290 362.7 
+  L 244.4 395.0 L 290.2 429 L 269.9 429 
+  L 230.2 399.7 L 229.4 399.7 L 229.3 429 
+  L 216 429 L 216 362.8 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,36%);fill-opacity:1;" 
+  d="M 343.6 387.4 L 375.5 362.8 L 396 362.7 
+  L 350.1 396.1 L 350.1 429 L 336.8 429 
+  L 336.8 396.1 L 291 362.7 L 311.4 362.8 
+  L 343.6 387.4 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,36%);fill-opacity:1;" 
+  d="M 468 387 A 50 35 0 1 0 468 413
+    L 455 413 A 37 28.5 0 1 1 455 387
+    L 468 387" />
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(86.3%,0%,0.4%);fill-opacity:1;" 
+  d="M 311.1 395.2 L 291.6 409.3 L 272 395.2 
+  L 291.6 381 L 311.1 395.2 "/>
+<ellipse style=" stroke:none;fill-rule:evenodd;fill:rgb(86.3%,0%,0.4%);fill-opacity:1;"
+  cx="423" cy="400" rx="17.5" ry="12.5" />
+</g>
+</svg>
